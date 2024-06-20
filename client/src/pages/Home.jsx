@@ -20,6 +20,32 @@ function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [subject,setSubject] = useState('')
+  const [message,setMessage] = useState('')
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    switch (id) {
+      case 'name':
+        setName(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'subject':
+        setSubject(value);
+        break;
+      case 'message':
+        setMessage(value);
+        break;
+      default:
+        break;
+    }
+  };
+  
+  
   SwiperCore.use([Navigation]);
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -245,6 +271,8 @@ function Home() {
               <input
                 type="text"
                 id="name"
+                value={name}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0"
               />
             </div>
@@ -258,19 +286,23 @@ function Home() {
               <input
                 type="email"
                 id="email"
+                value={email}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0"
               />
             </div>
             <div class="mb-6">
               <label
-                for="subjct"
+                for="subject"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Subject
               </label>
               <input
                 type="text"
-                id="subjct"
+                id="subject"
+                value={subject}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0"
               />
             </div>
@@ -284,15 +316,22 @@ function Home() {
               <textarea
                 rows={5}
                 id="message"
+                value={message}
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 0"
               />
             </div>
+            <Link
+          to={`mailto:abdouhdd16@gmail.com?subject=${subject}&body=${message}`}
+          >
+                
             <button
-              type="submit"
+              type="button"
               class="px-6 py-3 text-base font-medium text-black bg-white hover:bg-white mt-4"
             >
               Send A Message
             </button>
+          </Link>
           </form>
         </div>
         <div className="flex flex-col items-end sm:me-32 ps-4 md:pd-0 text-white md:pt-10 py-20 pt-96">
