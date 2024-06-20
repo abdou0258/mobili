@@ -54,11 +54,13 @@ const Carousel = () => {
             {offerListings && offerListings.length > 0 && (
               offerListings.map((listing, index) => (
                 <div className="w-96 p-2 box-border" key={index}>
+                  <Link to={`/listing/${listing._id}`}>
                   <img
                     src={listing.imageUrls[0]}
                     alt={`Slide ${index + 1}`}
                     className="w-full h-52  md:h-72 object-cover rounded-lg"
                   />
+                  </Link>
                 </div>
               ))
             )}
