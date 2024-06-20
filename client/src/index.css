@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,html {
+  overflow-x: hidden;
+  
+}
+
+:root {
+    
+    --font: "sora", sans-serif;
+  
+  
+    --h1: 3rem;
+    --h2: 2.4rem;
+    --h3: 1.9rem;
+    --h4: 1.5rem;
+    --h5: 1.2rem;
+    --p: 1rem;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: none;
+    
+  }
+  h1 {
+    font-family: var(--font);
+    font-size: var(--h1);
+  }
+  h2 {
+    font-family: var(--font);
+    font-size: var(--h2);
+   
+  }
+  h3 {
+    font-family: var(--font);
+    font-size: var(--h3);
+   
+  }
+  h4 {
+    font-family: var(--font);
+    font-size: var(--h4);
+    
+  }
+  h5 {
+    font-family: var(--font);
+    font-size: var(--h5);
+    
+  }
+  p {
+    font-family: var(--font);
+    font-size: var(--p);
+  }
+  @media (max-width: 426px) {
+    h1 {
+      font-family: var(--font);
+      font-size: var(--h2);
+    }
+    h2 {
+      font-family: var(--font);
+      font-size: var(--h3);
+    }
+    h3 {
+      font-family: var(--font);
+      font-size: var(--h4);
+      
+    }
+    h4 {
+      font-family: var(--font);
+      font-size: var(--h5);
+      
+    }
+    h5 {
+      font-family: var(--font);
+      font-size: var(--p);
+      
+    }}
+    
+  .bg-prim{
+    background-color: #110e0d;
+  }
+  .bg-second{
+    background-color: #272322;
+  }
+  .bg-accent{
+    background-color: #96817A;
+  }
+  .text-prim{
+    color: #0f0806;
+  }
+  .text-second{
+    color: #41302B;
+  }
+  .text-accent{
+    color: #96817A;
+  }
+
+  .signup{
+    background-image:url('./assets/signup-bg.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .hero{
+    background-image:linear-gradient(rgba(70, 55, 34, 0.2),
+    rgba(0, 0, 0, 0.7)), url("./assets/bg-hero.png");
+    background-position: center;
+    background-position: top;
+    background-size: cover;
+    height: 80vh;
+  }
+  .bg-all{
+    background-image:linear-gradient(rgba(70, 55, 34, 0.2),
+    rgba(0, 0, 0, 0.7)), url("./assets/bg-header-2.jpg");
+    background-position: top;
+    background-size: cover;
+    height: 30vh;
+  }
+  
+  
+  .glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.contact{
+  background-image:linear-gradient(rgba(70, 55, 34, 0.2),
+    rgba(0, 0, 0, 0.7)), url("./assets/bg-contact.jpg");
+    background-position: top;
+    background-size: cover;
+    padding: 50px 0 400px 0;
+    
+}
+.bg-about{
+  background-image: url("./assets/about.webp");
+  background-position: center;
+  background-size: cover;
+  height: 50vh
+}
+
+/* index.css */
+
+
+.carousel-container {
+  @apply flex items-center justify-center overflow-hidden;
+}
+
+.carousel-wrapper {
+  @apply flex transition-transform duration-500 ease-in-out;
+}
+
+.carousel-card {
+  @apply flex-shrink-0 w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4;
+}
+
+.carousel-image {
+  @apply w-full h-48 object-cover;
+}
